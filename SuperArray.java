@@ -26,7 +26,7 @@ public class SuperArray {
 		for(int q = 0; q < data.length; q++) {
 			plh[q] = data[q];
 		}
-		plh[data.length] = bean;
+		plh[size - 1] = bean;
 		data = plh;
 		return true;
 	}
