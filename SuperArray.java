@@ -23,7 +23,7 @@ public class SuperArray {
 	public boolean add(String bean) {
 		size++;
 		String[] plh = new String[data.length * 2];
-		for(int q = ; q < data.length; q++) {
+		for(int q = 0; q < data.length; q++) {
 			plh[q] = data[q];
 		}
 		plh[data.length] = bean;
