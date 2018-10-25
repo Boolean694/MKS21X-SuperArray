@@ -17,12 +17,17 @@ public class SuperArray {
 	
 	public void clear() {
 		size = 0;
+		data = new String[10];
 	}
 	
 	public boolean add(String bean) {
 		size++;
-		data = new String[size];
-		data[size - 1] = bean;
+		String[] plh = new String[data.length * 2];
+		for(int q = ; q < data.length; q++) {
+			plh[q] = data[q];
+		}
+		plh[data.length] = bean;
+		data = plh;
 		return true;
 	}
 	
