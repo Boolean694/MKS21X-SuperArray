@@ -36,5 +36,21 @@ public class SuperArray {
 		return "Old value: " + er;
 	}
 	
-	public 
+	public String toString() {
+		String r = "[";
+		for(int q = 0; q < size; q++) {
+			r = r + data[q] + ",";
+		}
+		return r;
+	}
+	
+	public boolean contains(String e) {
+		boolean bool = false;
+		for(int q = 0; q < size; q++) {
+			if(data[q] == e){bool = true;}
+		}
+		return bool;
+	}
+	
+	
 }
