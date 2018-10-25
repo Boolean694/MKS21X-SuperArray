@@ -46,6 +46,7 @@ public class SuperArray {
 		for(int q = 0; q < size; q++) {
 			r = r + data[q] + ",";
 		}
+		r += "]";
 		return r;
 	}
 	
@@ -57,5 +58,13 @@ public class SuperArray {
 		return bool;
 	}
 	
+	public int indexOf(String ye) {
+		for(int q = 0; q < data.length; q++) {
+			if(data[q] == ye) {
+				return q;
+			}
+		}
+		return -1;
+	}
 	
 }

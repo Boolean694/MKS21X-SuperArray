@@ -19,5 +19,13 @@ public class Driver {
 		System.out.println("element changed");
 		
 		System.out.println(arr.get(1));
+		
+		System.out.println("Array: " + arr.toString());
+		
+		System.out.println("Contains 'third': " + arr.contains("third"));
+		System.out.println("Contains 'fifth': " + arr.contains("fifth"));
+		
+		System.out.println("Index of 'third': " + arr.indexOf("third"));
+		System.out.println("Index of 'fifth': " + arr.indexOf("fifth"));
 	}
 }
