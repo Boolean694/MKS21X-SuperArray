@@ -30,5 +30,8 @@ public class Driver {
 		
 		arr.add("first");
 		System.out.println("Last index of 'first': " + arr.lastIndexOf("first"));
+		
+		arr.add(2, "woah");
+		System.out.println(arr.toString());
 	}
 }
