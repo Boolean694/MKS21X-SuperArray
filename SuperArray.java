@@ -108,6 +108,21 @@ public class SuperArray {
 	        return b;
 	    }
    	}
+   	
+   	public boolean remove(String tj) {
+   	    boolean bool = false;
+   	    for(int qwe = 0; qwe < data.length; qwe++) {
+   	        if(data[qwe] == tj){bool = true;}
+   	    }
+   	    
+   	    if(!bool){return false;}
+   	    else {
+   	        int ind;
+   	        for(int wer = 0; wer < data.length; wer++) {
+   	            if(data[wer] == tj){ind = wer;}
+   	        }
+   	    }
+   	}
 	
 	
 	
