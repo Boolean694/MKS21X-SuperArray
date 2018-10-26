@@ -27,5 +27,8 @@ public class Driver {
 		
 		System.out.println("Index of 'third': " + arr.indexOf("third"));
 		System.out.println("Index of 'fifth': " + arr.indexOf("fifth"));
+		
+		arr.add("first");
+		System.out.println("Last index of 'first': " + arr.lastIndexOf("first"));
 	}
 }
