@@ -33,5 +33,7 @@ public class Driver {
 		
 		arr.add(2, "woah");
 		System.out.println(arr.toString());
+		
+		System.out.println(arr.remove(3));
 	}
 }

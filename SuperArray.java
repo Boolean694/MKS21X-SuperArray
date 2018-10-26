@@ -91,4 +91,42 @@ public class SuperArray {
 		}
 	}
 	
+	public String remove(int ind) {
+	    if(ind >= size) {
+	        return "Error: Index out of range";
+	    }
+	    else {
+	        String[] plh = new String[data.length];
+	        for(int q = 0; q < ind; q++) {
+	            plh[q] = data[q];
+	        }
+	        for(int w = ind + 1; w < data.length; w++) {
+	            plh[w - 1] = data[w];
+	        }
+	        String b = data[ind];
+	        data = plh;
+	        return b;
+	    }
+   	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
