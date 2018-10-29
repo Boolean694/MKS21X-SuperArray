@@ -32,12 +32,12 @@ public class SuperArray {
 	}
 	
 	public String get(int i) {
-		if(i >= size){return "Error: Index out of bounds";}
+		if(i >= size || i < 0){return "Error: Index out of bounds";}
 		return data[i];
 	}
 	
 	public String set(int i, String e) {
-		if(i >= size) {return "Error: Index out of bounds";}
+		if(i >= size || i < 0) {return "Error: Index out of bounds";}
 		String er = data[i];
 		data[i] = e;
 		return "Old value: " + er;
@@ -77,7 +77,7 @@ public class SuperArray {
 	}
 	
 	public void add(int ind, String s) {
-		if(ind > size + 1) {System.out.println("Error: Index out of bounds");}
+		if(ind > size + 1 || ind < 0) {System.out.println("Error: Index out of bounds");}
 		else {
 			String[] plh = new String[data.length * 2];
 			for(int q = 0; q < ind; q++) {
@@ -92,7 +92,8 @@ public class SuperArray {
 	}
 	
 	public String remove(int ind) {
-	    if(ind >= size) {
+		size -= 1;
+	    if(ind >= size || ind < 0) {
 	        return "Error: Index out of range";
 	    }
 	    else {
@@ -110,11 +111,11 @@ public class SuperArray {
    	}
    	
    	public boolean remove(String tj) {
+		size -= 1;
    	    boolean bool = false;
    	    for(int qwe = 0; qwe < data.length; qwe++) {
    	        if(data[qwe] == tj){bool = true;}
    	    }
-   	    
    	    if(!bool){return false;}
    	    else {
    	        int ind = 0;
