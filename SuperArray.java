@@ -117,10 +117,19 @@ public class SuperArray {
    	    
    	    if(!bool){return false;}
    	    else {
-   	        int ind;
+   	        int ind = 0;
    	        for(int wer = 0; wer < data.length; wer++) {
    	            if(data[wer] == tj){ind = wer;}
    	        }
+			String[] plh = new String[data.length];
+	        for(int q = 0; q < ind; q++) {
+	            plh[q] = data[q];
+	        }
+	        for(int w = ind + 1; w < data.length; w++) {
+	            plh[w - 1] = data[w];
+	        }
+			data = plh;
+			return true;
    	    }
    	}
 	
