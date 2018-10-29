@@ -39,5 +39,12 @@ public class Driver {
 		
 		System.out.println(arr.remove("woah"));
 		System.out.println(arr.toString());
+		
+		try {
+			System.out.println(arr.get(-1));
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Index is not in the range");
+		}
 	}
 }
