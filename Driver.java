@@ -23,7 +23,23 @@ public class Driver {
         System.out.println(sa.remove(w));
     }
     
-    sa.add(67890,"u");
+    
+    for(int werwerwer = 0; werwerwer < 3; werwerwer++) {
+    sa.add("0");
+    System.out.println(sa.size());
+    }
+    
+    System.out.println(sa.indexOf("asd"));
+    System.out.println(sa.indexOf("wuio"));
+    System.out.println(sa.lastIndexOf("asd"));
+    System.out.println(sa.lastIndexOf("wuio"));
+    
+    for(int qwe = 300; qwe < 401; qwe++) {
+        System.out.println("Changed: " + qwe + " " + sa.set(qwe, "100"));
+    }
+    
+    sa.clear();
+    System.out.println(sa.toString());
     
     
   }
