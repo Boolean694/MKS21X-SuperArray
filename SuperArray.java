@@ -15,6 +15,14 @@ public class SuperArray {
 		return size == 0;
 	}
 	
+	private void resize() {
+        String[] plh = new String[size * 2 + 1];
+        for (int q = 0; q < data.length; q++) {
+          plh[q] = data[q];
+        }
+        data = plh;
+    }
+	
 	public int size() {
 		return size;
 	}
@@ -24,16 +32,15 @@ public class SuperArray {
 		data = new String[10];
 	}
 	
-	public boolean add(String bean) {
-		size++;
-		String[] plh = new String[data.length * 2];
-		for(int q = 0; q < data.length; q++) {
-			plh[q] = data[q];
-		}
-		plh[size - 2] = bean;
-		data = plh;
-		return true;
-	}
+	public boolean add(String bean){
+	    size++;
+        if(size == data.length){
+          resize();
+        }
+        data[size - 1] = bean;
+        
+        return true;
+    }
 	
 	public String get(int i) {
 		if(i >= size || i < 0){throw new ArrayIndexOutOfBoundsException("Index doesn't fall into range 0 - (size - 1)");}
