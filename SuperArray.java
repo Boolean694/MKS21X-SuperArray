@@ -6,6 +6,10 @@ public class SuperArray {
 		size = 0;
 		data = new String[10];
 	}
+	public SuperArray(int ic) {
+	    size = ic;
+	    data = new String[ic];
+	}
 	
 	public boolean isEmpty() {
 		return size == 0;
@@ -26,7 +30,7 @@ public class SuperArray {
 		for(int q = 0; q < data.length; q++) {
 			plh[q] = data[q];
 		}
-		plh[size - 1] = bean;
+		plh[size - 2] = bean;
 		data = plh;
 		return true;
 	}
@@ -132,7 +136,18 @@ public class SuperArray {
 			data = plh;
 			return true;
    	    }
+   	    
+   	     
    	}
+   	 public String toStringDebug() {
+   	        String s = "[";
+   	        for(int q = 0; q < size; q++) {
+   	            s += data[q];
+   	            s += ",";
+   	        }
+   	        s += "]";
+   	        return s;
+   	    } 
 	
 	
 	
