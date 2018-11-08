@@ -7,6 +7,9 @@ public class SuperArray {
 		data = new String[10];
 	}
 	public SuperArray(int ic) {
+		if(ic < 0) {
+			throw new IllegalArgumentException("e");
+		}
 	    size = ic;
 	    data = new String[ic];
 	}
@@ -34,7 +37,7 @@ public class SuperArray {
 	
 	public boolean add(String bean){
 	    size++;
-        if(size == data.length){
+        if(size >= data.length){
           resize();
         }
         data[size - 1] = bean;
@@ -103,11 +106,12 @@ public class SuperArray {
 	}
 	
 	public String remove(int ind) {
-		size -= 1;
+	
 	    if(ind >= size || ind < 0) {
 	        throw new ArrayIndexOutOfBoundsException("Index doesn't fall into range 0 - (size - 1)");
 	    }
 	    else {
+			size -= 1;
 	        String[] plh = new String[data.length];
 	        for(int q = 0; q < ind; q++) {
 	            plh[q] = data[q];
