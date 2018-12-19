@@ -19,7 +19,7 @@ public class SuperArray {
 	}
 	
 	private void resize() {
-        String[] plh = new String[size * 2 + 1];
+        String[] plh = new String[size * 2];
         for (int q = 0; q < data.length; q++) {
           plh[q] = data[q];
         }
@@ -36,12 +36,11 @@ public class SuperArray {
 	}
 	
 	public boolean add(String bean){
-	    size++;
         if(size >= data.length){
           resize();
         }
-        data[size - 1] = bean;
-        
+        data[size] = bean;
+		size++;
         return true;
     }
 	
@@ -93,15 +92,16 @@ public class SuperArray {
 	public void add(int ind, String s) {
 		if(ind > size + 1 || ind < 0) {throw new ArrayIndexOutOfBoundsException("Index doesn't fall into range 0 - (size - 1)");}
 		else {
-			String[] plh = new String[data.length * 2];
-			for(int q = 0; q < ind; q++) {
-				plh[q] = data[q];
+			if(size >= data.length) {resize();}
+			String plh = data[ind];
+			String plht = "";
+			data[ind] = s;
+			for(int w = ind; w < size - 1; w++) {
+				plht = data[w + 1];
+				data[w + 1] = plh;
+				plh = plht;
 			}
-			plh[ind] = s;
-			for(int w = ind + 1; w < size; w++) {
-				plh[w] = data[w];
-			}
-			data = plh;
+			size++;
 		}
 	}
 	
