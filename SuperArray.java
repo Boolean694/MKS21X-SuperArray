@@ -92,16 +92,12 @@ public class SuperArray {
 	public void add(int ind, String s) {
 		if(ind > size + 1 || ind < 0) {throw new ArrayIndexOutOfBoundsException("Index doesn't fall into range 0 - (size - 1)");}
 		else {
-			if(size >= data.length) {resize();}
-			String plh = data[ind];
-			String plht = "";
-			data[ind] = s;
-			for(int w = ind; w < size - 1; w++) {
-				plht = data[w + 1];
-				data[w + 1] = plh;
-				plh = plht;
-			}
 			size++;
+			if(size >= data.length) {resize();}
+			for(int q = size - 2; q >= ind; q--) {
+				data[q + 1] = data[q];
+			}
+			data[ind] = s;
 		}
 	}
 	
